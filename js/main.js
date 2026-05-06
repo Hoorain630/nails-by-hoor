@@ -93,22 +93,3 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Contact form handler
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const name = document.getElementById('cName').value;
-    const phone = document.getElementById('cPhone').value;
-    const designIdea = document.getElementById('cDesign').value;
-    const occasion = document.getElementById('cOccasion').value;
-    const message = document.getElementById('cMessage').value;
-
-    // Build WhatsApp message
-    const whatsappNumber = '923XXXXXXXXX'; // <-- Replace with your real number
-    const text = `Hi Hoor! 💖%0A%0AI'd love to order a custom set!%0A%0A👤 Name: ${encodeURIComponent(name)}%0A📱 Phone: ${encodeURIComponent(phone)}%0A✨ Design idea: ${encodeURIComponent(designIdea)}%0A🎀 Occasion: ${encodeURIComponent(occasion)}%0A💌 Notes: ${encodeURIComponent(message)}`;
-
-    window.open(`https://wa.me/${whatsappNumber}?text=${text}`, '_blank');
-  });
-}
